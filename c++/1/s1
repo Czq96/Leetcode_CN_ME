@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        bool notFound = true;
+        int i=-1;
+        int j=0;
+        while(notFound == true)
+        {
+            i++;
+            j=0;
+            if(i==nums.size())
+            {
+                std::cout << "not found";
+                notFound = false;
+            }            
+            else 
+            {
+                for(j; j<nums.size();j++)
+                {
+                    if(j!=i)
+                    {
+                        if((nums[i]+nums[j])== target)
+                        {   notFound = false;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        vector<int> answer;
+        answer.push_back(i);
+        answer.push_back(j);
+        return answer;
+    }
+};
